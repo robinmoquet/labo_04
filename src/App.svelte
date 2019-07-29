@@ -1,11 +1,16 @@
 <script>
-	export let name;
+	import Navbar from "./Navbar.svelte"
+	export let name = "world";
 </script>
 
 <style>
 	h1 {
-		color: purple;
+		/*@apply bg-blue-300*/
 	}
+	p { color: blue}
 </style>
 
-<h1>Hello {name}!</h1>
+<Navbar />
+
+<h1>ToDo your life !</h1>
+<p>Cool</p>
