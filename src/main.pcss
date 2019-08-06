@@ -4,6 +4,87 @@
 
 @tailwind utilities;
 
+.wrapper {
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+*:focus {
+    outline: none !important;
+} 
+
 h1 {
-    @apply text-6xl text-white bg-blue-900
+    @apply text-gray-300 mr-16;
+    font-size: 5em;
+    margin-top: 100px;
+}
+
+
+.button {
+    @apply relative rounded-full py-2 px-8 border-none shadow bg-blue-300 text-white;
+    transition-property: background, transform, box-shadow;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+.button span {
+    @apply font-light text-sm uppercase tracking-widest w-full overflow-hidden inline-block;
+    transition: all .5s ease;
+    line-height: .9;
+}
+
+.button.loading {
+    @apply shadow-none border-blue-400 border-solid bg-blue-400;
+    border-width: 6px;
+    width: 40px;
+    padding: 2px 0;
+    transition: none;
+    animation-name: rotate;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+.button.loading span {
+    width: 0;
+    opacity: 0;
+}
+.button::after {
+    @apply bg-white absolute rounded-full;
+    content: "";
+    top: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    transition: all .3s ease;
+    opacity: 0;
+}
+.button.loading::after {
+    opacity: 1;
+}
+
+.button:hover {
+    @apply bg-blue-400 shadow-lg;
+    transform: scale(1.03);
+}
+.button:hover span {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(1.05);
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.main-title h1 {
+    text-shadow: 1px 1px 1px #ed8936, 2px 2px 1px #ed8936, 3px 3px 1px #ed8936, 4px 4px 1px #ed8936, 5px 5px 1px #ed8936, 6px 6px 1px #ed8936, 7px 7px 1px #ed8936, 8px 8px 1px #ed8936, 9px 9px 1px #ed8936, 10px 10px 1px #ed8936, 11px 11px 1px #ed8936, 12px 12px 1px #ed8936, 13px 13px 1px #ed8936, 14px 14px 1px #ed8936, 15px 15px 1px #ed8936, 16px 16px 1px #ed8936, 17px 17px 1px #ed8936, 18px 18px 1px #ed8936, 19px 19px 1px #ed8936, 20px 20px 1px #ed8936, 21px 21px 1px #ed8936, 22px 22px 1px #ed8936, 23px 23px 1px #ed8936, 24px 24px 1px #ed8936, 25px 25px 1px #ed8936, 26px 26px 1px #ed8936, 27px 27px 1px #ed8936, 28px 28px 1px #ed8936, 29px 29px 1px #ed8936, 30px 30px 1px #ed8936, 31px 31px 1px #ed8936, 32px 32px 1px #ed8936, 33px 33px 1px #ed8936, 34px 34px 1px #ed8936, 35px 35px 1px #ed8936, 36px 36px 1px #ed8936, 37px 37px 1px #ed8936, 38px 38px 1px #ed8936, 39px 39px 1px #ed8936, 40px 40px 1px #ed8936, 41px 41px 1px #ed8936, 42px 42px 1px #ed8936, 43px 43px 1px #ed8936, 44px 44px 1px #ed8936, 45px 45px 1px #ed8936, 46px 46px 1px #ed8936, 47px 47px 1px #ed8936, 48px 48px 1px #ed8936, 49px 49px 1px #ed8936, 50px 50px 1px #ed8936, 51px 51px 1px #ed8936, 52px 52px 1px #ed8936, 53px 53px 1px #ed8936, 54px 54px 1px #ed8936, 55px 55px 1px #ed8936, 56px 56px 1px #ed8936, 57px 57px 1px #ed8936, 58px 58px 1px #ed8936, 59px 59px 0px #ed8936;
 }

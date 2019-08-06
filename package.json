@@ -18,7 +18,8 @@
     "tailwindcss": "^1.0.5"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "tailwindcss-transitions": "^2.0.1"
   },
   "scripts": {
     "build": "rollup -c",
