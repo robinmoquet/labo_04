@@ -1,18 +1,18 @@
 <script>
-    const {text} = $$props;
+    import { beforeUpdate, afterUpdate } from 'svelte';
+    export let loading = false;
+    export let text;
+    export let type = 'button';
+    export let click = null;
 
-    let className = "button";
+    let className = loading ? "button loading" : "button";
 
-    function handleClick() {
-        className = "button loading";
-        setTimeout(() => {
-            className = "button";
-        }, 3000);
-    }
+    beforeUpdate(() => className = loading ? "button loading" : "button");
+
 </script>
 
 <div class="relative inline-block">
-    <button class={className} on:click={handleClick}>
+    <button class={className} on:click={click} type={type}>
         <span>
             {text}
         </span>

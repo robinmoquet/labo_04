@@ -22,10 +22,32 @@ h1 {
     margin-top: 100px;
 }
 
+.material-icons {
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+.button-icon {
+    @apply relative rounded-full border-none shadow text-white flex justify-center items-center;
+    transition-property: background-color, transform, box-shadow;
+    width: 40px;
+    height: 40px;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+.button-icon:hover {
+    @apply shadow-lg;
+    transform: scale(1.03);
+}
+.button-icon:hover i {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(1.05);
+}
 
 .button {
     @apply relative rounded-full py-2 px-8 border-none shadow bg-blue-300 text-white;
-    transition-property: background, transform, box-shadow;
+    transition-property: background-color, transform, box-shadow;
     transition-duration: .5s;
     transition-timing-function: ease;
 }
